@@ -2170,3 +2170,139 @@ The Nexocoin developer ecosystem provides:
 - A transparent blockchain explorer
 
 Together, these components enable developers to build robust, auditable, and long-lasting applications on Nexocoin while preserving the integrity of the underlying network.
+
+---
+
+## 17. Explorer
+
+### 17.1 Purpose and Role of the Explorer
+
+The Nexocoin Explorer is a core component of the public infrastructure of the network.
+
+Its primary purpose is to provide:
+- Full transparency of on-chain activity
+- Independent verification of network state
+- Public access to blockchain data without intermediaries
+
+The Explorer operates as a read-only interface and does not require authentication or privileged access.
+
+---
+
+### 17.2 Information Displayed
+
+The Explorer exposes real-time and historical blockchain data directly derived from the Nexocoin base layer.
+
+Displayed information includes:
+- Latest blocks and block height
+- Block timestamps and hashes
+- Transactions contained within each block
+- Transaction inputs and outputs
+- Sender and recipient addresses
+- Transaction confirmation status
+- Network difficulty and consensus metadata
+
+All data reflects the current canonical chain.
+
+---
+
+### 17.3 Address and Balance Visibility
+
+The Explorer allows inspection of any public address on the network.
+
+For each address, the Explorer provides:
+- Current balance
+- Historical balance changes
+- Incoming and outgoing transactions
+- Token holdings associated with the address
+
+Private keys are never exposed or derivable through the Explorer.
+
+---
+
+### 17.4 Token and Contract Transparency
+
+For networks supporting tokens and smart contracts, the Explorer includes dedicated views.
+
+These views allow:
+- Inspection of token metadata
+- Visibility of token supply and transfers
+- Tracking of smart contract interactions
+- Verification of contract deployment and execution
+
+This ensures that all programmable assets remain publicly auditable.
+
+---
+
+### 17.5 Public Auditability
+
+The Explorer enables full public auditing of the Nexocoin network.
+
+Audit capabilities include:
+- Verification of block rewards
+- Validation of supply emission over time
+- Inspection of founder allocation and vesting schedules
+- Confirmation of protocol-enforced economic rules
+
+Any third party can independently validate network behavior without relying on centralized reports.
+
+---
+
+### 17.6 Transparency Guarantees
+
+Transparency is enforced by design rather than policy.
+
+Key guarantees:
+- Data originates directly from validated blockchain state
+- No data manipulation or aggregation layers
+- Deterministic results for identical queries
+
+The Explorer reflects the same data available to any full node.
+
+---
+
+### 17.7 Open Access Model
+
+The Nexocoin Explorer is openly accessible to all users.
+
+Access characteristics:
+- No account required
+- No API keys needed for basic usage
+- No permission gating
+- No geographic restrictions
+
+This ensures equal access for individuals, developers, auditors, and institutions.
+
+---
+
+### 17.8 Reliability and Data Integrity
+
+Explorer data integrity relies on:
+- Continuous synchronization with the network
+- Verification of block and transaction validity
+- Automatic recovery from node restarts
+
+Any discrepancy between Explorer data and on-chain state is detectable and verifiable.
+
+---
+
+### 17.9 Role in the Ecosystem
+
+The Explorer serves multiple roles:
+- Transparency tool for users
+- Debugging and inspection tool for developers
+- Verification interface for exchanges
+- Audit reference for third parties
+
+It is a fundamental trust-minimization component of the Nexocoin ecosystem.
+
+---
+
+### 17.10 Summary
+
+The Nexocoin Explorer provides:
+- Comprehensive visibility into blockchain activity
+- Public auditability of economic and protocol rules
+- Open and permissionless access to network data
+- A transparent interface aligned with decentralization principles
+
+By exposing the full state of the network, the Explorer reinforces trust through verifiability rather than assumptions.
