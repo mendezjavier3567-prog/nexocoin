@@ -2466,3 +2466,164 @@ The Nexocoin governance model provides:
 - Full transparency and auditability
 
 By anchoring governance in protocol rules rather than discretion, Nexocoin establishes a stable foundation for long-term operation.
+
+---
+
+## 19. Upgrade Strategy
+
+### 19.1 Upgrade Philosophy
+
+Nexocoin follows a conservative and stability-first upgrade strategy.
+
+The primary objective of protocol evolution is to preserve:
+- Network continuity
+- Consensus stability
+- Backward compatibility
+- Economic predictability
+
+Upgrades are treated as exceptional events rather than routine operations.
+
+---
+
+### 19.2 Avoidance of Chaotic Hard Forks
+
+Nexocoin explicitly avoids uncoordinated or frequent hard forks.
+
+Hard forks:
+- Fragment network consensus
+- Increase systemic risk
+- Create uncertainty for users and exchanges
+- Complicate long-term maintenance
+
+For this reason, hard forks are considered a last resort and not a default upgrade mechanism.
+
+---
+
+### 19.3 Preference for Backward-Compatible Upgrades
+
+Whenever possible, Nexocoin upgrades are designed to be backward compatible.
+
+This includes:
+- Soft-fork-compatible rule extensions
+- Optional feature activation
+- Graceful protocol version negotiation
+- Non-disruptive validation rule updates
+
+Backward compatibility ensures that older nodes remain operational during transition periods.
+
+---
+
+### 19.4 Version Signaling and Network Coordination
+
+Protocol upgrades rely on explicit version signaling.
+
+Nodes communicate supported protocol versions through:
+- Network handshake mechanisms
+- Block and header metadata
+- Capability negotiation during peer discovery
+
+This allows the network to coordinate upgrades without centralized control.
+
+---
+
+### 19.5 Gradual Feature Activation
+
+New features are introduced gradually.
+
+Activation follows a phased approach:
+1. Implementation and internal testing
+2. Public release in disabled or passive mode
+3. Network-wide signaling
+4. Conditional activation upon sufficient adoption
+
+This minimizes disruption and allows early detection of issues.
+
+---
+
+### 19.6 Upgrade Safety and Testing Requirements
+
+Before any upgrade is activated, it must satisfy strict safety criteria:
+- Deterministic behavior across implementations
+- Compatibility with existing chain data
+- No alteration of historical state
+- No changes to monetary supply guarantees
+
+Extensive testing precedes every upgrade.
+
+---
+
+### 19.7 Protection of Economic and Consensus Rules
+
+Core economic and consensus parameters are treated as highly sensitive.
+
+These include:
+- Total supply constraints
+- Reward schedules
+- Validation rules
+- Gas cost boundaries
+
+Changes to these parameters require exceptional justification and broad network acceptance.
+
+---
+
+### 19.8 Node Operator Autonomy
+
+Node operators retain full autonomy over software adoption.
+
+There is:
+- No forced update mechanism
+- No automatic remote code execution
+- No centralized upgrade authority
+
+Operators decide when and how to upgrade based on their own risk assessment.
+
+---
+
+### 19.9 Upgrade Transparency
+
+All upgrades are fully transparent.
+
+Transparency is ensured through:
+- Public source code repositories
+- Documented change specifications
+- Open discussion prior to release
+
+This allows auditors, exchanges, and developers to independently evaluate changes.
+
+---
+
+### 19.10 Long-Term Protocol Stability
+
+The upgrade strategy prioritizes long-term stability over short-term innovation.
+
+This approach:
+- Reduces technical debt
+- Simplifies infrastructure integration
+- Improves trust from institutional participants
+
+Stability is considered a competitive advantage, not a limitation.
+
+---
+
+### 19.11 No Fixed Upgrade Roadmap
+
+Nexocoin does not publish a fixed upgrade roadmap.
+
+This avoids:
+- Rigid commitments
+- Overengineering
+- Feature pressure unrelated to real needs
+
+Upgrades occur only when justified by clear technical or security requirements.
+
+---
+
+### 19.12 Summary
+
+The Nexocoin upgrade strategy ensures:
+- Predictable protocol evolution
+- Strong backward compatibility
+- Minimal consensus disruption
+- High confidence for users and exchanges
+
+By avoiding chaotic forks and prioritizing stability, Nexocoin establishes a robust foundation for long-term network operation.
