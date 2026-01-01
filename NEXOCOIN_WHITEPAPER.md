@@ -1,5 +1,40 @@
 # Nexocoin Whitepaper
 
+## Table of Contents
+
+1. Abstract  
+2. Introduction  
+3. Design Goals  
+   3.1 Security  
+   3.2 Decentralization  
+   3.3 Economic Sustainability  
+   3.4 Low and Predictable User Costs  
+   3.5 Long-Term Network Stability  
+4. Network Architecture  
+   4.1 Native Base-Layer Network  
+   4.2 Core Nodes Architecture  
+   4.3 Peer-to-Peer Network  
+   4.4 State Persistence  
+   4.5 Fault Tolerance  
+   4.6 Architectural Design Philosophy  
+5. Consensus Mechanism  
+6. Cryptography & Security  
+7. Block Structure  
+8. Economic Model  
+9. Founder Allocation & Vesting  
+10. Transaction Model  
+11. Gas Model  
+12. Wallet System  
+13. Mining & Validation  
+14. Token System (NTP-1)  
+15. Smart Contracts (Nexo VM)  
+16. Developer Ecosystem  
+17. Explorer  
+18. Governance  
+19. Upgrade Strategy  
+20. Security Audits & Testing  
+21. Conclusion
+
 ## 1. Abstract
 
 Nexocoin (NXC) is a sovereign, independent blockchain network designed as a native digital currency system.
