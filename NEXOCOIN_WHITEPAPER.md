@@ -17,3 +17,4 @@ From its inception, Nexocoin prioritizes long-term network sustainability. The s
 By maintaining a clear separation between the base currency (NXC) and any higher-level tokenized assets that may exist on top of the network, Nexocoin preserves the integrity of its monetary layer. NXC is required for native transaction fees, consensus participation, and protocol-level incentives, reinforcing its role as the fundamental unit of value within the system.
 
 The Abstract reflects the current implemented state of the Nexocoin protocol. Features described herein are already functional at the core protocol level unless explicitly marked as future extensions. No assumptions are made regarding external dependencies, custodial services, or centralized intermediaries.
+
