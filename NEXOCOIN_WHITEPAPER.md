@@ -18,3 +18,10 @@ By maintaining a clear separation between the base currency (NXC) and any higher
 
 The Abstract reflects the current implemented state of the Nexocoin protocol. Features described herein are already functional at the core protocol level unless explicitly marked as future extensions. No assumptions are made regarding external dependencies, custodial services, or centralized intermediaries.
 
+---
+
+## 2. Introduction
+
+Nexocoin is designed as a foundational digital currency system, not as an application platform or secondary-layer asset. Its primary objective is to function as a sovereign base-layer blockchain capable of supporting real economic activity without reliance on external networks or protocols.
+Unlike token-based systems or smart-contract platforms, Nexocoin implements all core monetary and validation functions directly at the protocol level. Consensus, issuance, transaction validation, and settlement are intrinsic components of the base layer, ensuring deterministic behavior, protocol-level security, and long-term network stability.
+This architectural approach allows Nexocoin to function as a neutral, censorship-resistant monetary network optimized for reliability rather than rapid feature expansion. The protocol prioritizes correctness, predictability, and economic soundness, providing a stable foundation for long-term adoption and real-world financial use.
