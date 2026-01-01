@@ -817,3 +817,129 @@ Rather than embedding complex financial engineering at the base layer, Nexocoin 
 This approach supports long-term adoption, regulatory clarity, and integration with real-world economic systems.
 
 ---
+
+## 9. Founder Allocation & Vesting
+
+### 9.1 Purpose and Rationale
+
+A clear, transparent, and enforceable founder allocation model is a critical component of long-term network credibility. Nexocoin adopts a conservative and verifiable founder allocation structure designed to align the interests of the founding entity with the long-term health, security, and adoption of the network.
+
+This model explicitly prevents short-term speculation, market manipulation, and sudden supply shocks, while ensuring sustained commitment to protocol development, maintenance, and ecosystem growth.
+
+---
+
+### 9.2 Allocation Overview
+
+The total supply of Nexocoin (NXC) is fixed at:
+
+- **100,000,000 NXC (100%)**
+
+From this supply, the founder allocation is defined as:
+
+- **10,000,000 NXC**
+- **Equivalent to 10% of the total supply**
+
+This allocation is strictly capped and cannot be increased under any circumstances.
+
+---
+
+### 9.3 Lock-Up (Cliff Period)
+
+The entire founder allocation is subject to a hard lock-up (cliff) period:
+
+- **Duration:** 12 months (365 days)
+- **Scope:** 100% of the 10,000,000 NXC
+- **Restrictions during the cliff:**
+  - No transfers
+  - No sales
+  - No staking
+  - No collateralization
+  - No indirect usage
+
+The cliff is enforced on-chain at the protocol level, not through off-chain agreements or discretionary control. During this period, the founder allocation is cryptographically immovable.
+
+This design ensures that the founding entity cannot extract value from the network during its early adoption and stabilization phase.
+
+---
+
+### 9.4 Vesting Schedule
+
+After the completion of the 12-month cliff, the founder allocation enters a linear vesting phase:
+
+- **Vesting duration:** 24 months
+- **Vesting frequency:** Monthly
+- **Release rate:** 1/24 of the founder allocation per month
+
+This corresponds to approximately **416,666.67 NXC per month**, released gradually and predictably.
+
+At no point can more than the vested portion be accessed or transferred.
+
+---
+
+### 9.5 On-Chain Enforcement
+
+The entire allocation, lock-up, and vesting mechanism is implemented and enforced directly on-chain:
+
+- Vesting logic is embedded in protocol rules
+- No multisignature overrides
+- No administrative backdoors
+- No manual interventions
+
+All movements from the founder allocation address are programmatically restricted according to the vesting schedule.
+
+---
+
+### 9.6 Transparency and Public Verifiability
+
+The founder allocation wallet is:
+
+- Publicly visible
+- Auditable in real time
+- Fully traceable through the Nexocoin explorer
+
+Any participant can independently verify:
+
+- Total allocated amount
+- Locked balance
+- Vested balance
+- Historical transfers (once unlocked)
+
+This ensures complete transparency for exchanges, auditors, developers, and users.
+
+---
+
+### 9.7 Market Protection and Anti-Dump Design
+
+This allocation model provides multiple layers of protection against market abuse:
+
+- No early liquidity extraction
+- No sudden supply increases
+- No founder-driven price shocks
+- Predictable and gradual token release
+
+By combining a long cliff with linear vesting, Nexocoin eliminates the risk of founder-led dumps that have historically damaged trust in many blockchain projects.
+
+---
+
+### 9.8 Alignment of Incentives
+
+The founder allocation model is designed to ensure that:
+
+- The founding entity benefits only if the network succeeds long-term
+- Incentives are aligned with network security and adoption
+- Development remains sustainable over multiple years
+
+This structure reinforces Nexocoin’s positioning as a long-term infrastructure project rather than a short-term speculative asset.
+
+---
+
+### 9.9 Summary
+
+- **Founder allocation:** 10,000,000 NXC (10%)
+- **Cliff:** 12 months (100% locked)
+- **Vesting:** 24 months, linear, monthly
+- **Enforcement:** Fully on-chain
+- **Transparency:** Public and auditable
+- **Market impact:** Controlled and predictable
+
+This model meets the expectations of professional exchanges, auditors, and institutional participants and follows best practices observed in mature blockchain networks.
