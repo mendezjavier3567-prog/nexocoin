@@ -1477,3 +1477,167 @@ The Nexocoin wallet system provides:
 - Deterministic and auditable behavior
 
 This design ensures that users retain full sovereignty over their assets while maintaining the highest security standards expected of a base-layer cryptocurrency.
+
+---
+
+## 13. Mining & Validation
+
+### 13.1 Overview
+
+Mining and validation are foundational components of the Nexocoin network security model. They are responsible for transaction ordering, block production, and enforcement of consensus rules. Nexocoin is designed to support **continuous, persistent network participation**, ensuring that security does not depend on user sessions, wallets being open, or transient activity.
+
+The system is engineered for long-term, uninterrupted operation under real-world conditions.
+
+---
+
+### 13.2 Persistent 24/7 Mining Model
+
+Nexocoin mining operates as a **persistent background process**.
+
+Key properties:
+- Continuous operation 24 hours a day, 7 days a week
+- Independent from wallet sessions or user interaction
+- Resistant to restarts, crashes, and temporary outages
+
+Once a mining node is configured and activated, it maintains participation autonomously as long as the system is online.
+
+---
+
+### 13.3 Session-Independent Operation
+
+Mining and validation processes are **not tied to active user sessions**.
+
+This means:
+- Closing a wallet interface does not stop mining
+- User logouts do not interrupt validation
+- Mining state persists across reboots and system restarts
+
+This design eliminates common security weaknesses found in session-bound or UI-dependent mining models.
+
+---
+
+### 13.4 Validator Roles and Responsibilities
+
+Validators are responsible for:
+- Verifying transaction correctness
+- Enforcing protocol rules
+- Validating block structure and contents
+- Participating in consensus decisions
+
+All validation logic is executed at the protocol level, ensuring deterministic and reproducible behavior across the network.
+
+---
+
+### 13.5 Hybrid Mining and Validation Architecture
+
+Nexocoin supports a **hybrid mining and validation model**, allowing multiple security mechanisms to coexist.
+
+This architecture:
+- Distributes security responsibilities
+- Reduces reliance on a single attack surface
+- Encourages diverse participation profiles
+
+Mining and validation roles are clearly separated but cryptographically coordinated.
+
+---
+
+### 13.6 Incentive Mechanism
+
+Miners and validators are economically incentivized through protocol-defined rewards.
+
+Incentives include:
+- Block rewards paid in NXC
+- Transaction fee inclusion
+- Long-term participation benefits
+
+Rewards are structured to favor consistent, honest participation rather than short-term opportunistic behavior.
+
+---
+
+### 13.7 Economic Security
+
+The incentive model aligns economic interests with network security.
+
+Security properties include:
+- High cost of malicious behavior
+- Reduced profitability of attacks
+- Reward loss for invalid or dishonest actions
+
+Economic penalties discourage attacks such as double-spending, chain reorganization, and consensus manipulation.
+
+---
+
+### 13.8 Network Security Contribution
+
+Each active miner or validator contributes directly to:
+- Increased decentralization
+- Improved fault tolerance
+- Higher resistance to censorship
+- Stronger chain finality guarantees
+
+Security scales horizontally as participation increases.
+
+---
+
+### 13.9 Fault Tolerance
+
+The mining and validation system is designed to tolerate failures.
+
+Features:
+- Graceful handling of node downtime
+- Automatic reintegration after recovery
+- No single point of failure
+
+The network remains secure even with partial validator outages.
+
+---
+
+### 13.10 Deterministic Validation Rules
+
+All validation rules are deterministic and protocol-enforced.
+
+This ensures:
+- Identical results across independent implementations
+- Predictable consensus outcomes
+- Easier auditing and verification
+
+Non-deterministic behavior is explicitly avoided.
+
+---
+
+### 13.11 Attack Resistance
+
+The mining and validation architecture provides resistance against:
+- Double-spend attacks
+- Long-range attacks
+- Validator collusion
+- Network partition attempts
+
+Security assumptions are conservative and based on real-world threat models.
+
+---
+
+### 13.12 Long-Term Sustainability
+
+The system is designed for decades-long operation.
+
+Long-term considerations include:
+- Stable incentive structures
+- Predictable validation costs
+- Gradual evolution without destabilizing changes
+
+Mining and validation remain viable even as network conditions evolve.
+
+---
+
+### 13.13 Summary
+
+Nexocoin’s mining and validation model delivers:
+
+- Persistent 24/7 operation
+- Session-independent security
+- Strong economic incentives
+- High fault tolerance
+- Robust resistance to attacks
+
+This approach ensures that Nexocoin maintains a secure, decentralized, and reliable base-layer network suitable for long-term global use.
