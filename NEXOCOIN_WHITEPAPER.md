@@ -1161,3 +1161,158 @@ The Nexocoin transaction model provides:
 - Long-term stability and scalability
 
 This design positions Nexocoin as a robust and practical base-layer monetary network suitable for real-world adoption.
+
+---
+
+## 11. Gas Model
+
+### 11.1 Overview
+
+Nexocoin implements a deterministic and predictable gas model designed to ensure long-term usability, cost stability, and resistance to fee market manipulation. Unlike auction-based fee systems, Nexocoin prioritizes transparency and user certainty over short-term market dynamics.
+
+Gas in Nexocoin represents the measurable cost of consuming network resources and is an integral component of transaction validation and execution at the protocol level.
+
+All gas fees are paid exclusively in **NXC**, the native coin of the Nexocoin network.
+
+---
+
+### 11.2 Gas Denomination in NXC
+
+Gas costs are denominated directly in NXC rather than in abstract units detached from the native currency.
+
+Key properties:
+- No external pricing oracle required
+- No conversion layers
+- Direct economic alignment between network usage and NXC value
+
+This approach simplifies wallet UX, improves transparency, and strengthens the economic cohesion of the protocol.
+
+---
+
+### 11.3 Resource-Based Gas Accounting
+
+Gas consumption is calculated based on objectively measurable resource usage, including:
+
+- Transaction size (bytes)
+- Signature verification cost
+- State read/write operations
+- Protocol-level computation
+
+Each operation has a predefined gas cost defined at the protocol level.
+
+There are no dynamic or opaque execution paths that could introduce unpredictable costs.
+
+---
+
+### 11.4 Cost Ranges and Fee Bands
+
+Nexocoin defines **fee ranges** instead of volatile fee markets.
+
+#### 11.4.1 Base Fee Ranges
+
+Transactions fall into predefined cost bands depending on their resource usage:
+
+- Simple value transfers
+- Multi-output transactions
+- System-level operations
+- Advanced or future programmable interactions
+
+Each category has:
+- A minimum gas cost
+- A maximum bounded gas cost
+
+This prevents extreme fee variability and protects users from unexpected spikes.
+
+---
+
+### 11.5 No Auction-Based Fee Market
+
+Nexocoin explicitly rejects auction-style gas models.
+
+There are:
+- No priority bidding wars
+- No competition-driven fee inflation
+- No advantage for wealthy actors over regular users
+
+Transaction inclusion is governed by deterministic rules rather than fee escalation strategies.
+
+This design choice improves fairness and network accessibility.
+
+---
+
+### 11.6 Protection Against Fee Spikes
+
+The protocol includes structural safeguards against sudden gas price spikes:
+
+- Upper bounds on gas costs
+- Controlled adjustment mechanisms (if any)
+- Consensus-level enforcement of fee limits
+
+Validators cannot arbitrarily increase fees, and blocks containing invalid fee parameters are rejected by the network.
+
+---
+
+### 11.7 Predictable User Experience
+
+One of the core objectives of the Nexocoin gas model is **user predictability**.
+
+Wallets and clients can:
+- Accurately estimate transaction costs before submission
+- Display exact gas usage and fees
+- Prevent failed transactions due to underpriced gas
+
+Users are not required to understand complex fee markets to interact with the network safely.
+
+---
+
+### 11.8 Gas and Network Sustainability
+
+Gas fees serve multiple purposes within the Nexocoin ecosystem:
+
+- Prevent spam and denial-of-service attacks
+- Compensate miners and validators
+- Reinforce economic security of the network
+
+The model balances affordability with long-term sustainability, ensuring that network security does not depend on speculative fee pressure.
+
+---
+
+### 11.9 Determinism and Consensus Enforcement
+
+Gas rules are enforced at the consensus level.
+
+All nodes independently verify that:
+- Gas usage is correctly calculated
+- Fees fall within allowed ranges
+- No transaction exceeds protocol limits
+
+Any block containing invalid gas accounting is rejected entirely.
+
+This guarantees consistency across the network and prevents consensus divergence.
+
+---
+
+### 11.10 Future Extensibility
+
+The gas model is designed to be extensible without breaking backward compatibility.
+
+Possible future extensions include:
+- Additional operation categories
+- Smart contract execution pricing
+- Advanced system-level interactions
+
+All extensions must preserve the core principles of predictability, bounded costs, and transparency.
+
+---
+
+### 11.11 Summary
+
+The Nexocoin gas model provides:
+
+- Gas paid directly in NXC
+- Bounded and predictable cost ranges
+- No auction-based fee market
+- Strong protection against fee spikes
+- Deterministic execution and validation
+
+This design ensures that Nexocoin remains usable, fair, and economically sustainable as a long-term base-layer blockchain.
