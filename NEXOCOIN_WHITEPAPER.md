@@ -1826,3 +1826,185 @@ Most importantly:
 
 **Nexocoin (NXC) is a cryptocurrency.  
 Tokens are optional extensions built on top of it — never the other way around.**
+
+---
+
+## 15. Smart Contracts (Nexo VM)
+
+### 15.1 Overview
+
+Nexocoin incorporates a native smart contract execution environment known as **Nexo VM**.
+This virtual machine is designed to enable programmable logic on the Nexocoin blockchain while maintaining strict security, predictability, and economic discipline.
+
+Nexo VM operates as an extension of the base-layer protocol and executes deterministic code validated by the network.
+
+---
+
+### 15.2 Execution Model
+
+Smart contracts in Nexo VM are executed deterministically across all validating nodes.
+
+Execution characteristics:
+- Deterministic instruction set
+- Fully replicated execution
+- State transitions validated by consensus
+- No external dependencies during execution
+
+Each contract execution results in a verifiable state change that is either:
+- Fully accepted, or
+- Fully rejected
+
+There are no partial executions.
+
+---
+
+### 15.3 Contract Lifecycle
+
+The lifecycle of a smart contract includes:
+1. Deployment
+2. Invocation
+3. State update
+4. Termination (if applicable)
+
+Contracts are deployed via explicit on-chain transactions and receive a unique contract identifier.
+
+Once deployed:
+- Code is immutable
+- State evolves only through valid executions
+- History remains permanently auditable
+
+---
+
+### 15.4 Security Model
+
+Security is a primary design goal of Nexo VM.
+
+Security properties include:
+- Strong isolation between contracts
+- No shared mutable memory
+- Explicit state access only
+- Strict execution limits
+
+Contracts cannot:
+- Access node internals
+- Execute arbitrary system calls
+- Bypass protocol rules
+
+This minimizes attack surfaces and prevents privilege escalation.
+
+---
+
+### 15.5 Gas and Resource Accounting
+
+All smart contract executions consume **gas paid in NXC**.
+
+Gas ensures:
+- Fair resource allocation
+- Prevention of infinite loops
+- Network stability
+
+Gas costs are:
+- Deterministic
+- Transparent
+- Defined at protocol level
+
+There are no dynamic auctions or unpredictable spikes.
+
+---
+
+### 15.6 Permission Model
+
+Nexo VM supports fine-grained permission control.
+
+Permission features:
+- Contract-level access rules
+- Function-level authorization
+- Role-based execution constraints
+
+Permissions are enforced on-chain and validated by all nodes.
+
+This enables:
+- Controlled contract interactions
+- Secure administrative functions
+- Reduced attack vectors
+
+---
+
+### 15.7 State Management
+
+Contract state is stored on-chain and persists across executions.
+
+State properties:
+- Cryptographically secured
+- Versioned through block history
+- Fully auditable
+
+State transitions are deterministic and reproducible by any node.
+
+---
+
+### 15.8 Failure Handling
+
+Contract execution follows a strict failure model.
+
+If execution fails:
+- All state changes are reverted
+- Gas is consumed according to protocol rules
+- Network state remains consistent
+
+This ensures atomicity and prevents undefined behavior.
+
+---
+
+### 15.9 Use Cases
+
+Nexo VM enables a wide range of applications, including:
+- Decentralized finance primitives
+- Staking and reward distribution
+- Governance mechanisms
+- Escrow systems
+- Programmable asset logic
+
+All use cases operate within predefined security and cost constraints.
+
+---
+
+### 15.10 Extensibility and Future Evolution
+
+Nexo VM is designed with long-term evolution in mind.
+
+Extensibility principles:
+- Backward compatibility
+- Versioned execution environments
+- Controlled feature introduction
+
+New capabilities can be added without:
+- Breaking existing contracts
+- Requiring chaotic hard forks
+- Compromising network stability
+
+---
+
+### 15.11 Comparison Philosophy
+
+Nexo VM does not attempt unrestricted expressiveness at the expense of security.
+
+Design philosophy:
+- Predictability over complexity
+- Security over flexibility
+- Stability over rapid experimentation
+
+This positions Nexocoin as a conservative and reliable execution environment.
+
+---
+
+### 15.12 Summary
+
+The Nexo VM smart contract system:
+- Enables deterministic programmable logic
+- Enforces strict security boundaries
+- Uses predictable gas costs
+- Supports permissioned execution
+- Preserves base-layer stability
+
+Smart contracts extend Nexocoin’s capabilities while maintaining its core principles of security, transparency, and long-term sustainability.
