@@ -1,20 +1,29 @@
 # Nexocoin
 
-## Abstract
+Nexocoin (NXC) is a sovereign, independent base-layer blockchain network designed as a native digital currency system.
 
-Nexocoin (NXC) is a sovereign, independent blockchain network designed as a native digital currency system.
-It operates on its own blockchain, with its own consensus rules, economic model, and network infrastructure.
+It operates on its own blockchain with its own consensus rules, economic model, and network infrastructure. Nexocoin is **not** a token issued on top of another blockchain, nor a derivative or wrapped asset. It is a standalone cryptocurrency with native issuance, validation, and settlement.
 
-Nexocoin is not a token issued on top of another blockchain.
-It is a base-layer cryptocurrency with native issuance, validation, and settlement.
+## Purpose
 
-The project focuses on delivering a secure, decentralized, and economically sustainable digital currency suitable for real-world usage.
-Key design goals include predictable transaction costs, long-term network stability, and transparent on-chain rules.
+Nexocoin is designed to provide a secure, decentralized, and economically sustainable digital currency suitable for long-term real-world use. The project emphasizes correctness, predictability, and resilience over rapid experimentation or short-term speculation.
 
-Nexocoin introduces a hybrid consensus mechanism combining Proof of Work (PoW) and Proof of Stake (PoS),
-aiming to balance security, decentralization, and energy efficiency.
+## Core Characteristics
 
-The network is supported by a multi-node peer-to-peer architecture designed for resilience and fault tolerance.
+- Native base-layer blockchain (non-token architecture)
+- Hybrid PoW + PoS consensus mechanism
+- Predictable transaction costs
+- Long-term economic sustainability
+- Conservative, security-focused design philosophy
 
-This repository contains the official technical documentation of the Nexocoin blockchain,
-covering its architecture, consensus mechanism, cryptographic foundations, economic model, and developer ecosystem.
+## Documentation
+
+The full technical specification of the Nexocoin protocol is available in the official whitepaper:
+
+- 📄 **NEXOCOIN_WHITEPAPER.md**
+
+## Project Status
+
+Nexocoin is under active development. All core components are designed with auditability, transparency, and long-term network stability in mind.
+
+This repository contains the official technical documentation of the Nexocoin protocol.
