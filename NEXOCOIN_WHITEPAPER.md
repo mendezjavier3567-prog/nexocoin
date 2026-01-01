@@ -318,3 +318,152 @@ Instead, it focuses on:
 This ensures that Nexocoin’s consensus mechanism remains viable, secure, and credible as a foundational monetary layer over the long term.
 
 ---
+
+## 6. Cryptography & Security
+
+Cryptography is the foundational pillar that underpins the security, integrity, and trust model of the Nexocoin network. Every aspect of Nexocoin — from ownership of funds to transaction validation and ledger immutability — is enforced through cryptographic primitives implemented directly at the protocol level.
+
+Nexocoin adopts a **conservative, battle-tested cryptographic approach**, prioritizing correctness, transparency, and long-term security over experimental or unproven designs. The system is engineered to remain secure against both current and foreseeable threat models, including adversarial actors with significant computational and economic resources.
+
+---
+
+### 6.1 Public and Private Key Infrastructure
+
+Nexocoin uses an asymmetric cryptographic key model based on public/private key pairs to establish identity, ownership, and authorization.
+
+- **Private keys** represent absolute control over funds and are never transmitted across the network.
+- **Public keys** are used to derive addresses and to verify cryptographic signatures.
+
+Each Nexocoin address is mathematically derived from a public key, ensuring:
+- Non-reversibility (it is computationally infeasible to derive the private key from the public key or address)
+- Deterministic ownership
+- Permissionless participation
+
+Private keys are generated locally by the user or wallet software using cryptographically secure random number generation. The protocol assumes that key custody is the responsibility of the user, reinforcing Nexocoin’s trust-minimized design.
+
+No account or balance exists independently of cryptographic proof of ownership.
+
+---
+
+### 6.2 Digital Signatures and Transaction Authorization
+
+All transactions in Nexocoin must be authorized through **cryptographic digital signatures**.
+
+A valid transaction requires:
+- A properly formatted transaction structure
+- A cryptographic signature generated using the sender’s private key
+- Verification against the corresponding public key
+
+Digital signatures provide the following guarantees:
+
+- **Authenticity**: The transaction was created by the legitimate owner of the private key.
+- **Integrity**: Any modification to the transaction data invalidates the signature.
+- **Non-repudiation**: A signed transaction cannot be credibly denied by its originator.
+
+Signature verification is performed independently by every validating node in the network. Transactions that fail cryptographic verification are deterministically rejected and never enter the blockchain state.
+
+This ensures that authorization is enforced entirely by mathematics, not by trust in intermediaries or third parties.
+
+---
+
+### 6.3 Cryptographic Hashing and Immutability
+
+Nexocoin relies on cryptographic hash functions to secure data integrity and ensure immutability of the blockchain.
+
+Hashing is used to:
+- Link blocks together
+- Commit transactions into blocks
+- Represent state transitions
+- Detect any form of data tampering
+
+Each block contains a hash of the previous block, forming an immutable chain where altering any historical data would require recomputing all subsequent blocks.
+
+Key properties of the hashing model include:
+- **Collision resistance**: It is computationally infeasible to find two different inputs producing the same hash.
+- **Preimage resistance**: It is infeasible to derive the original input from its hash.
+- **Avalanche effect**: Any small change in input produces a completely different hash.
+
+This structure ensures that once data is sufficiently confirmed, it becomes practically immutable, providing strong guarantees for settlement finality and historical accuracy.
+
+---
+
+### 6.4 Prevention of Double Spending
+
+Double spending prevention is a core security requirement of any digital currency system. Nexocoin prevents double spending through a combination of cryptographic verification, consensus rules, and deterministic state validation.
+
+Each transaction explicitly references spendable funds and updates the global state in a strictly ordered manner.
+
+Double spending is prevented by:
+- Cryptographic proof of ownership via signatures
+- Global transaction ordering enforced by consensus
+- State validation performed independently by all nodes
+
+Any attempt to reuse already-spent funds is immediately detected and rejected by the protocol.
+
+Because validation is deterministic and decentralized, no central authority is required to track balances or approve transactions.
+
+---
+
+### 6.5 Zero-Trust Security Model
+
+Nexocoin is designed around a **zero-trust security philosophy**.
+
+The protocol assumes:
+- Nodes may be malicious
+- Network traffic may be adversarial
+- Participants may act irrationally or dishonestly
+
+As a result:
+- No node is trusted by default
+- Every message, transaction, and block must be cryptographically verifiable
+- Consensus rules are enforced identically by all participants
+
+Security is derived exclusively from:
+- Cryptographic proof
+- Deterministic validation rules
+- Economic incentives and penalties
+
+There are no privileged actors, trusted validators, or special permissions at the protocol level.
+
+---
+
+### 6.6 Network-Level Cryptographic Security
+
+All peer-to-peer communication in Nexocoin is authenticated and validated to prevent network-level attacks such as message forgery, replay attacks, or unauthorized state propagation.
+
+Nodes verify:
+- Message structure
+- Protocol compliance
+- Cryptographic validity where applicable
+
+Invalid or malformed messages are discarded without affecting node state.
+
+This ensures that even under hostile network conditions, honest nodes can maintain correct operation and consensus alignment.
+
+---
+
+### 6.7 Long-Term Cryptographic Resilience
+
+Nexocoin’s cryptographic design emphasizes **long-term resilience** over short-term optimization.
+
+Key principles include:
+- Use of widely reviewed cryptographic primitives
+- Avoidance of experimental or opaque constructions
+- Modular design enabling future cryptographic upgrades if required
+
+The protocol is structured to allow for cryptographic evolution in response to advances in computing (including potential future threats such as quantum computing), without compromising historical security guarantees.
+
+---
+
+### 6.8 Security as a Protocol-Level Invariant
+
+In Nexocoin, security is not an optional layer or external add-on. It is treated as a **protocol-level invariant**.
+
+All consensus rules, transaction validation logic, and state transitions are designed to preserve cryptographic correctness under all conditions.
+
+Any behavior that violates cryptographic or consensus rules is invalid by definition and cannot be accepted by the network.
+
+This strict approach ensures that Nexocoin remains a secure, censorship-resistant, and trustworthy base-layer monetary system suitable for real-world economic activity.
+
+---
+---
