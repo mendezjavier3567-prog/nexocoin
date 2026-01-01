@@ -1316,3 +1316,164 @@ The Nexocoin gas model provides:
 - Deterministic execution and validation
 
 This design ensures that Nexocoin remains usable, fair, and economically sustainable as a long-term base-layer blockchain.
+
+---
+
+## 12. Wallet System
+
+### 12.1 Overview
+
+The Nexocoin wallet system is designed as a core security and usability component of the protocol rather than a secondary application layer. Wallets are treated as first-class citizens within the Nexocoin ecosystem, ensuring secure key management, deterministic transaction signing, and persistent state handling.
+
+The initial reference implementation is an **official command-line interface (CLI) wallet**, focused on transparency, auditability, and long-term reliability.
+
+---
+
+### 12.2 Official CLI Wallet
+
+The Nexocoin CLI wallet serves as the canonical wallet implementation for the network.
+
+Key characteristics:
+- Fully open-source
+- Deterministic behavior
+- Minimal external dependencies
+- Cross-platform compatibility
+
+The CLI wallet provides direct interaction with the Nexocoin protocol without abstraction layers that could obscure security-critical operations.
+
+---
+
+### 12.3 Local Key Generation and Management
+
+All cryptographic key material is generated **locally** on the user's device.
+
+Properties:
+- No keys are ever generated server-side
+- No keys are transmitted over the network
+- No reliance on third-party services
+
+Private keys remain exclusively under user control at all times.
+
+---
+
+### 12.4 Local Transaction Signing
+
+All transactions are signed locally within the wallet environment.
+
+This guarantees:
+- No exposure of private keys during transaction creation
+- Immunity to remote signing attacks
+- Full cryptographic integrity of transaction data
+
+Unsigned transactions are never broadcast to the network, and signing occurs only after explicit user confirmation.
+
+---
+
+### 12.5 Security Model
+
+The Nexocoin wallet system follows a **zero-trust security model**.
+
+Security principles include:
+- Least privilege access
+- Explicit user consent for critical actions
+- No background signing processes
+- No automatic key export mechanisms
+
+The wallet assumes that the network, peers, and external infrastructure may be hostile and enforces security boundaries accordingly.
+
+---
+
+### 12.6 Wallet Persistence
+
+Wallet state is persisted securely on disk using encrypted storage.
+
+Persistent data includes:
+- Encrypted private keys
+- Wallet configuration
+- Address metadata
+- Transaction history references
+
+Sensitive data is never stored in plaintext.
+
+---
+
+### 12.7 Encryption and Access Control
+
+Wallet storage is protected using strong encryption mechanisms.
+
+Features:
+- User-defined passphrases
+- Memory-safe key handling
+- Optional time-based unlocking
+- Automatic lock on inactivity
+
+Incorrect passphrase attempts do not reveal any information about the underlying key material.
+
+---
+
+### 12.8 Backup and Recovery
+
+The wallet system supports deterministic recovery mechanisms.
+
+Recovery options include:
+- Seed-based restoration
+- Encrypted backup exports
+- Manual cold-storage procedures
+
+Backup processes are explicitly user-initiated and never automated without consent.
+
+---
+
+### 12.9 Network Interaction
+
+The wallet communicates directly with Nexocoin nodes using the native protocol.
+
+Capabilities:
+- Query balances
+- Broadcast signed transactions
+- Verify transaction confirmations
+- Monitor chain state
+
+The wallet does not rely on centralized APIs or trusted intermediaries.
+
+---
+
+### 12.10 Persistence Across Sessions
+
+Wallet data remains fully consistent across sessions.
+
+Properties:
+- Persistent account state
+- Deterministic address derivation
+- Consistent transaction indexing
+- Safe restart behavior after shutdowns or crashes
+
+This ensures long-term usability and reliability for continuous operation.
+
+---
+
+### 12.11 Extensibility
+
+The wallet architecture is designed for future expansion without compromising security.
+
+Potential extensions:
+- Hardware wallet integration
+- GUI interfaces built on top of the CLI
+- Multi-signature support
+- Advanced account permission models
+
+All extensions must preserve local signing and user-controlled key ownership.
+
+---
+
+### 12.12 Summary
+
+The Nexocoin wallet system provides:
+
+- An official CLI-based reference wallet
+- Local key generation and signing
+- Strong encryption and persistence
+- Zero-trust security architecture
+- Deterministic and auditable behavior
+
+This design ensures that users retain full sovereignty over their assets while maintaining the highest security standards expected of a base-layer cryptocurrency.
