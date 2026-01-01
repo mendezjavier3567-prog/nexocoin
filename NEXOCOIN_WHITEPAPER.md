@@ -1641,3 +1641,188 @@ Nexocoin’s mining and validation model delivers:
 - Robust resistance to attacks
 
 This approach ensures that Nexocoin maintains a secure, decentralized, and reliable base-layer network suitable for long-term global use.
+
+---
+
+## 14. Token System (NTP-1)
+
+### 14.1 Overview
+
+Nexocoin provides a native token framework named **NTP-1 (Nexocoin Token Protocol)**.  
+This system enables the creation and management of custom tokens **on top of the Nexocoin blockchain**, while preserving the integrity and primacy of the base-layer currency, **NXC**.
+
+It is critical to clearly distinguish between:
+- **NXC**, the native cryptocurrency of the Nexocoin blockchain, and
+- **Tokens created via NTP-1**, which are secondary assets issued on the network.
+
+Nexocoin itself is **not a token**. It is a **standalone cryptocurrency with its own blockchain, consensus, and monetary policy**.
+
+---
+
+### 14.2 Purpose of the Token System
+
+The NTP-1 system exists to:
+- Enable third-party asset issuance
+- Support ecosystem growth
+- Allow application-specific tokens
+- Facilitate decentralized economic models
+
+Tokens extend functionality **without altering the base-layer protocol**.
+
+---
+
+### 14.3 Token Creation
+
+Token creation is a protocol-defined operation executed on-chain.
+
+Characteristics:
+- Tokens are created via explicit token-creation transactions
+- Metadata is recorded immutably on the blockchain
+- Token rules are enforced at protocol level
+
+Token creators define parameters such as:
+- Token identifier
+- Initial supply
+- Optional divisibility rules
+- Optional metadata fields
+
+All tokens are subject to Nexocoin consensus and validation rules.
+
+---
+
+### 14.4 Fees and Economic Costs
+
+Token creation and token-related operations incur **protocol-level fees paid in NXC**.
+
+Fee design goals:
+- Prevent network spam
+- Ensure economic accountability
+- Align token usage with network sustainability
+
+Fees are:
+- Predictable
+- Deterministic
+- Not subject to auction mechanisms
+
+This ensures fair access while protecting network resources.
+
+---
+
+### 14.5 Visibility and Transparency
+
+All tokens created via NTP-1 are:
+- Fully visible on-chain
+- Auditable by any participant
+- Trackable through the Nexocoin explorer
+
+Transparency properties:
+- Token supply can be independently verified
+- Issuance history is immutable
+- Ownership changes are publicly observable
+
+There are no hidden or off-chain token states.
+
+---
+
+### 14.6 Token Transfers and Ownership
+
+Token transfers follow similar validation principles to native NXC transactions.
+
+Properties:
+- Ownership is cryptographically enforced
+- Transfers require valid digital signatures
+- Double-spending is prevented at consensus level
+
+Token balances are tied to addresses in the same security model as NXC.
+
+---
+
+### 14.7 Distinction Between NXC and Tokens
+
+This distinction is fundamental and explicit.
+
+**NXC (Nexocoin):**
+- Native cryptocurrency
+- Base-layer asset
+- Required for fees and security
+- Used for mining rewards and validation incentives
+- Integral to consensus and economic security
+
+**NTP-1 Tokens:**
+- Secondary assets
+- Issued by users or applications
+- Depend on Nexocoin for security
+- Do not participate in consensus
+- Do not replace or compete with NXC
+
+NXC exists independently of any token.  
+Tokens cannot exist without Nexocoin.
+
+---
+
+### 14.8 Non-Token Architecture of Nexocoin
+
+Nexocoin is **not deployed on another blockchain**.
+It does not rely on smart contracts of external networks.
+It is not a wrapped asset or representation.
+
+Key facts:
+- Nexocoin has its own blockchain
+- Its own consensus mechanism
+- Its own validator and miner set
+- Its own economic model
+
+Tokens are an extension — not the foundation.
+
+---
+
+### 14.9 Security Model
+
+Token security inherits the full security guarantees of the Nexocoin blockchain.
+
+Security properties:
+- Same cryptographic primitives as NXC
+- Same validation rules
+- Same immutability guarantees
+
+No separate trust assumptions are introduced.
+
+---
+
+### 14.10 Use Cases
+
+The NTP-1 system supports:
+- Utility tokens
+- Governance tokens
+- Asset-backed tokens
+- Application-specific credits
+
+All without compromising base-layer stability.
+
+---
+
+### 14.11 Long-Term Design Philosophy
+
+The token system is intentionally constrained.
+
+Design principles:
+- Simplicity over complexity
+- Predictability over flexibility
+- Security over experimentation
+
+This prevents uncontrolled token proliferation and systemic risk.
+
+---
+
+### 14.12 Summary
+
+The Nexocoin Token System (NTP-1):
+- Enables controlled token creation
+- Preserves base-layer integrity
+- Maintains full transparency
+- Enforces strict economic discipline
+
+Most importantly:
+
+**Nexocoin (NXC) is a cryptocurrency.  
+Tokens are optional extensions built on top of it — never the other way around.**
