@@ -654,3 +654,166 @@ By maintaining a conservative and well-defined block design, Nexocoin ensures:
 This approach aligns with Nexocoin’s philosophy of building a robust base-layer monetary network capable of supporting real-world economic activity over decades.
 
 ---
+
+## 8. Economic Model
+
+The economic model of Nexocoin defines the monetary policy, issuance rules, and incentive mechanisms that govern the long-term sustainability and security of the network. The model is designed to balance scarcity, predictable issuance, network security, and economic fairness without relying on speculative mechanisms or discretionary intervention.
+
+Nexocoin treats its economic layer as a core protocol component, not as an auxiliary or adjustable parameter.
+
+---
+
+### 8.1 Total Supply
+
+The total supply of Nexocoin is strictly capped at:
+
+**100,000,000 NXC**
+
+This maximum supply is enforced at the protocol level and cannot be altered without a consensus-breaking change.
+
+Key properties of the supply model:
+
+- Fixed maximum supply
+- No inflation beyond the defined issuance schedule
+- No discretionary minting
+- No hidden supply mechanisms
+
+This approach ensures long-term monetary predictability and aligns Nexocoin with scarcity-based digital monetary systems.
+
+---
+
+### 8.2 Issuance Policy
+
+Nexocoin follows a transparent and deterministic issuance policy defined entirely by protocol rules.
+
+New NXC are introduced into circulation exclusively through block production, according to predefined reward rules.
+
+The issuance model ensures that:
+
+- All newly minted coins are earned through network participation
+- Issuance is gradual and predictable
+- Monetary expansion follows a declining schedule over time
+- No centralized entity can arbitrarily create new units
+
+Issuance parameters are encoded directly into the consensus and validation logic, making them publicly auditable and verifiable by any node.
+
+---
+
+### 8.3 Block Rewards
+
+Block rewards are the primary mechanism through which new NXC enter circulation.
+
+Each valid block may include a block reward allocated to the entity responsible for block production, depending on the consensus mechanism in use (PoW, PoS, or hybrid).
+
+Block rewards serve multiple purposes:
+
+- Incentivizing honest participation
+- Securing the network
+- Distributing new supply in a decentralized manner
+
+Reward calculation follows strict protocol rules to ensure correctness and fairness.
+
+Incorrect reward allocation results in block rejection.
+
+---
+
+### 8.4 Reward Distribution and Consensus Incentives
+
+In Nexocoin’s hybrid consensus environment, rewards are structured to incentivize both computational security and economic alignment.
+
+Depending on the consensus role, rewards may be distributed to:
+
+- Miners providing computational work
+- Validators contributing stake-based security
+- Protocol-level system incentives (where applicable)
+
+This balanced incentive structure reduces reliance on a single security vector and mitigates risks associated with pure PoW or pure PoS systems.
+
+---
+
+### 8.5 Emission Curve and Long-Term Supply Dynamics
+
+Nexocoin employs a declining emission model designed to:
+
+- Gradually reduce new supply over time
+- Avoid sudden supply shocks
+- Preserve long-term scarcity
+
+The emission curve is deterministic and known in advance, enabling participants to model future supply with high accuracy.
+
+As block rewards decrease, transaction fees and protocol utility progressively become the primary economic drivers of the network.
+
+---
+
+### 8.6 Transaction Fees as Economic Signal
+
+Transaction fees in Nexocoin serve as an economic signal rather than a speculative bidding mechanism.
+
+Key characteristics:
+
+- Predictable fee ranges
+- No auction-based fee markets
+- No priority bidding wars
+- No fee volatility driven by congestion speculation
+
+Fees are denominated in NXC and are enforced at the protocol level according to transaction type and complexity.
+
+Collected fees may be distributed to block producers or used for protocol-defined purposes, reinforcing long-term sustainability.
+
+---
+
+### 8.7 Sustainability of Network Security
+
+The Nexocoin economic model is explicitly designed to sustain network security over time without relying on perpetual inflation.
+
+Security sustainability is achieved through:
+
+- Gradual transition from issuance-based incentives to usage-based incentives
+- Low but consistent transaction costs
+- Broad participation enabled by low barriers to entry
+- Hybrid consensus reducing single-point dependency
+
+This ensures that the network remains economically secure even as block rewards decline.
+
+---
+
+### 8.8 Economic Predictability and User Trust
+
+Predictability is a core design principle of Nexocoin’s economic model.
+
+Users, developers, and institutions benefit from:
+
+- Stable monetary rules
+- Transparent supply mechanics
+- Auditable reward logic
+- Absence of discretionary monetary policy
+
+This predictability reduces uncertainty, encourages long-term participation, and supports Nexocoin’s role as a reliable digital monetary system.
+
+---
+
+### 8.9 Resistance to Economic Manipulation
+
+The Nexocoin protocol enforces strict economic validation rules.
+
+Blocks that violate issuance limits, reward calculations, or fee rules are rejected by the network regardless of origin.
+
+There are:
+
+- No privileged issuers
+- No emergency minting mechanisms
+- No governance-based monetary overrides
+
+Economic rules are enforced by code and consensus, not by trust or authority.
+
+---
+
+### 8.10 Economic Model as a Foundation Layer
+
+The economic model of Nexocoin is intentionally conservative and minimal.
+
+Rather than embedding complex financial engineering at the base layer, Nexocoin provides a stable and predictable economic foundation upon which higher-level systems can be safely built.
+
+This approach supports long-term adoption, regulatory clarity, and integration with real-world economic systems.
+
+---
