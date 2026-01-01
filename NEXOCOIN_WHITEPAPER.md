@@ -466,4 +466,191 @@ Any behavior that violates cryptographic or consensus rules is invalid by defini
 This strict approach ensures that Nexocoin remains a secure, censorship-resistant, and trustworthy base-layer monetary system suitable for real-world economic activity.
 
 ---
+
+## 7. Block Structure
+
+The block structure of Nexocoin defines how transactions, state changes, and cryptographic commitments are organized, validated, and permanently recorded on the blockchain. A block represents an atomic unit of consensus, encapsulating a verifiable snapshot of network activity and state transitions.
+
+Nexocoin adopts a deterministic and conservative block design focused on correctness, auditability, and long-term stability rather than aggressive optimization or excessive complexity.
+
+---
+
+### 7.1 Block Composition Overview
+
+Each Nexocoin block is composed of two primary components:
+
+- **Block Header**
+- **Block Body**
+
+Together, these components provide all the information required for independent validation, state reconstruction, and historical verification by any node in the network.
+
+The block structure is designed to ensure that:
+- All state transitions are explicitly verifiable
+- Blocks can be validated independently
+- Historical data remains immutable
+- Network participants can reach deterministic consensus
+
+---
+
+### 7.2 Block Header
+
+The block header contains metadata required for consensus, validation, and cryptographic linkage between blocks.
+
+A typical Nexocoin block header includes:
+
+- **Block Version**  
+  Identifies the protocol rules under which the block was created, enabling forward compatibility and controlled upgrades.
+
+- **Previous Block Hash**  
+  A cryptographic hash referencing the immediately preceding block, forming the immutable blockchain structure.
+
+- **Merkle Root / State Commitment**  
+  A cryptographic commitment representing all transactions or state changes included in the block.
+
+- **Timestamp**  
+  A network-validated timestamp indicating when the block was produced, subject to protocol-defined constraints.
+
+- **Consensus Data**  
+  Fields required by the consensus mechanism (PoW, PoS, or hybrid), such as difficulty parameters, validator identifiers, or staking proofs.
+
+- **Block Height**  
+  The sequential position of the block within the blockchain.
+
+The header is intentionally compact, allowing nodes to efficiently verify block legitimacy without processing the entire block body unless necessary.
+
+---
+
+### 7.3 Block Body
+
+The block body contains the actual payload of the block.
+
+This includes:
+- A list of validated transactions
+- Protocol-level system transactions (such as rewards or internal state updates)
+- Optional metadata required by the protocol
+
+All transactions included in a block must:
+- Be cryptographically valid
+- Comply with consensus and protocol rules
+- Result in a valid state transition
+
+Transactions are ordered deterministically to ensure that all nodes derive the same resulting state when processing the block.
+
+---
+
+### 7.4 Cryptographic Hashing and Block Linking
+
+Hashing is fundamental to Nexocoin’s block structure.
+
+Each block is cryptographically linked to the previous block via the `Previous Block Hash` field. This creates a chain where:
+
+- Any modification to a historical block invalidates all subsequent blocks
+- Tampering is immediately detectable
+- The ledger becomes practically immutable once sufficiently confirmed
+
+Nexocoin uses cryptographic hash functions with strong collision resistance and preimage resistance, ensuring the integrity and security of block data.
+
+Hashing is applied to:
+- Block headers
+- Transaction data
+- State commitments
+
+This guarantees that blocks represent a verifiable and tamper-proof record of network history.
+
+---
+
+### 7.5 Transaction Commitment and Merkle Structure
+
+Transactions within a block are committed using a Merkle tree or equivalent cryptographic structure.
+
+This provides several advantages:
+- Efficient verification of transaction inclusion
+- Compact cryptographic proofs
+- Scalable validation for light clients
+
+The Merkle root included in the block header represents a cryptographic summary of all transactions in the block. Any change to a transaction alters the Merkle root, invalidating the block.
+
+This structure allows nodes to verify individual transactions without requiring the full transaction set, supporting scalability and decentralization.
+
+---
+
+### 7.6 Block Validation Process
+
+Every Nexocoin node independently validates each received block before accepting it into its local chain.
+
+Block validation includes, but is not limited to:
+
+- Verifying the block header structure
+- Checking the previous block hash
+- Validating all cryptographic hashes and commitments
+- Ensuring all transactions are valid and properly signed
+- Verifying consensus rules (PoW, PoS, or hybrid conditions)
+- Confirming correct reward and fee distribution
+- Ensuring the resulting state transition is valid
+
+If any validation step fails, the block is deterministically rejected and discarded.
+
+There is no partial acceptance: a block is either fully valid or completely invalid.
+
+---
+
+### 7.7 Block Acceptance Rules
+
+A block is accepted by a Nexocoin node only if it satisfies all protocol-defined acceptance rules.
+
+Key acceptance criteria include:
+
+- Correct linkage to the existing blockchain
+- Full compliance with consensus rules
+- Valid cryptographic signatures and hashes
+- No double spending or invalid state transitions
+- Compliance with protocol limits (block size, transaction count, etc.)
+
+Blocks that violate any rule are considered invalid regardless of the entity that produced them.
+
+There are no privileged block producers or trusted validators.
+
+---
+
+### 7.8 Fork Handling and Chain Selection
+
+In cases where multiple valid blocks are observed at the same height, Nexocoin applies deterministic chain selection rules defined by the consensus mechanism.
+
+Temporary forks may occur due to network latency or concurrent block production. These forks are resolved automatically as the network converges on the canonical chain.
+
+Only blocks that are part of the selected canonical chain are considered final.
+
+This mechanism ensures consistency and liveness without centralized coordination.
+
+---
+
+### 7.9 Determinism and Auditability
+
+The Nexocoin block structure is designed to be fully deterministic.
+
+Given the same initial state and block data, all honest nodes will derive:
+- The same state transitions
+- The same account balances
+- The same blockchain history
+
+This property enables:
+- Public auditability
+- Independent verification
+- Trust-minimized operation
+
+Any deviation from deterministic behavior is treated as a protocol violation.
+
+---
+
+### 7.10 Block Structure as a Stability Primitive
+
+The block structure of Nexocoin is not optimized for rapid experimentation or frequent changes. Instead, it is engineered as a stability primitive upon which higher-level functionality can safely be built.
+
+By maintaining a conservative and well-defined block design, Nexocoin ensures:
+- Long-term protocol reliability
+- Predictable network behavior
+- Strong security guarantees
+
+This approach aligns with Nexocoin’s philosophy of building a robust base-layer monetary network capable of supporting real-world economic activity over decades.
+
 ---
