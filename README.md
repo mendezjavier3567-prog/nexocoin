@@ -1,0 +1,2 @@
+# nexocoin
+Nexocoin blockchain protocol
