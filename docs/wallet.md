@@ -1,7 +1,6 @@
 # Wallets
 
-This document describes how wallets work in the Nexocoin protocol.
-
+This document describes how wallets work in the Nexocoin protocol.  
 Wallets are the primary interface between users and the Nexocoin network.
 
 ---
@@ -10,9 +9,9 @@ Wallets are the primary interface between users and the Nexocoin network.
 
 A Nexocoin wallet is defined by:
 
-- A cryptographic key pair
-- A public address
-- A private signing key
+- A cryptographic key pair  
+- A public address  
+- A private signing key  
 
 Wallets do not exist as accounts on the network.  
 They are cryptographic identities.
@@ -23,12 +22,13 @@ They are cryptographic identities.
 
 A Nexocoin address:
 
-- Is derived from a public key
-- Is represented as a hexadecimal string
-- Identifies the recipient or sender of transactions
+- Is derived from a public key  
+- Is represented as a hexadecimal string  
+- Identifies the sender or recipient of a transaction  
+- Contains no embedded balance or metadata  
 
-Example format:
-Addresses contain no embedded balance data.
+Addresses do not store funds.  
+They reference state maintained by the protocol.
 
 ---
 
@@ -36,11 +36,12 @@ Addresses contain no embedded balance data.
 
 Private keys:
 
-- Are used to sign transactions
-- Must remain secret
-- Are never transmitted over the network
+- Are used to sign transactions  
+- Must remain secret  
+- Are never transmitted over the network  
 
-Loss of a private key results in permanent loss of access to funds.
+Loss of a private key results in permanent loss of access to funds.  
+The protocol cannot recover or regenerate private keys.
 
 ---
 
@@ -48,11 +49,11 @@ Loss of a private key results in permanent loss of access to funds.
 
 Public keys:
 
-- Are derived from private keys
-- Are used to verify transaction signatures
-- Can be shared safely
+- Are derived from private keys  
+- Are used to verify transaction signatures  
+- Can be shared safely  
 
-Nodes validate signatures using public keys.
+Nodes validate transactions by verifying signatures against public keys.
 
 ---
 
@@ -60,11 +61,11 @@ Nodes validate signatures using public keys.
 
 Wallets can be created:
 
-- Offline
-- Deterministically
-- Without network interaction
+- Offline  
+- Deterministically  
+- Without network interaction  
 
-No registration or approval is required.
+No registration, approval, or on-chain operation is required to create a wallet.
 
 ---
 
@@ -72,9 +73,9 @@ No registration or approval is required.
 
 Balances are:
 
-- Stored at protocol level
-- Associated with addresses
-- Updated by validated transactions
+- Maintained at the global protocol state  
+- Associated with addresses  
+- Updated exclusively through validated transactions  
 
 Wallet software reads balances from the blockchain state.
 
@@ -84,11 +85,11 @@ Wallet software reads balances from the blockchain state.
 
 To create a transaction:
 
-1. Inputs and outputs are defined
-2. The transaction is signed with the private key
-3. The signed transaction is broadcast to the network
+1. Inputs and outputs are defined  
+2. The transaction is signed with the private key  
+3. The signed transaction is broadcast to the network  
 
-Unsigned transactions are rejected.
+Unsigned or improperly signed transactions are rejected by all nodes.
 
 ---
 
@@ -96,11 +97,11 @@ Unsigned transactions are rejected.
 
 Nexocoin supports multiple wallet types:
 
-- CLI wallets
-- Desktop wallets
-- Mobile wallets
-- Hardware wallets
-- Programmatic wallets (SDK)
+- CLI wallets  
+- Desktop wallets  
+- Mobile wallets  
+- Hardware wallets  
+- Programmatic wallets (SDK-based)  
 
 All wallet types follow the same protocol rules.
 
@@ -110,11 +111,11 @@ All wallet types follow the same protocol rules.
 
 The Nexocoin CLI allows:
 
-- Balance inspection
-- Transaction creation
-- Transaction broadcasting
+- Balance inspection  
+- Transaction creation  
+- Transaction broadcasting  
 
-CLI tools interact directly with the node.
+CLI tools interact directly with a Nexocoin node.
 
 ---
 
@@ -122,12 +123,12 @@ CLI tools interact directly with the node.
 
 Wallet security depends on:
 
-- Private key protection
-- Secure backups
-- Offline key storage
-- User operational discipline
+- Private key protection  
+- Secure backups  
+- Offline key storage  
+- User operational discipline  
 
-The protocol does not store or recover keys.
+The protocol does not store keys and does not provide recovery mechanisms.
 
 ---
 
@@ -135,10 +136,10 @@ The protocol does not store or recover keys.
 
 Planned wallet features include:
 
-- Multi-signature wallets
-- Hardware wallet integration
-- Smart contract interaction
-- Delegated permissions
+- Multi-signature wallets  
+- Hardware wallet integration  
+- Smart contract interaction  
+- Delegated permissions  
 
 All future features remain backward-compatible.
 
@@ -146,10 +147,10 @@ All future features remain backward-compatible.
 
 ## Summary
 
-- Wallets are cryptographic identities
-- Private keys control funds
-- The network enforces all rules
-- Wallets do not require registration
-- Users remain fully sovereign
+- Wallets are cryptographic identities  
+- Private keys control access to funds  
+- The protocol enforces all validation rules  
+- Wallets do not require registration  
+- Users remain fully sovereign  
 
 Wallets are a fundamental component of the Nexocoin ecosystem.
