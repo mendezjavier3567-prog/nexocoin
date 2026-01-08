@@ -4,16 +4,17 @@ This directory contains the official technical documentation of the Nexocoin pro
 
 ## Contents
 
-- [Introduction](intro.md)
-- [Protocol Overview](protocol.md)
-- [Consensus Mechanism](consensus.md)
+- [Introduction](introduction.md)
+- [Protocol Overview](protocol-overview.md)
+- [Consensus Mechanism](consensus-mechanism.md)
 - [Mining](mining.md)
 - [Transactions](transactions.md)
 - [Networking](networking.md)
-- [Security Model](security.md)
+- [Security Model](security-model.md)
 - [Economic Model](economics.md)
-- [Roadmap](roadmap.md)
-
+- [Gas and Fees](gas-and-fees.md)
+- [Supply](supply.md)
+- [Wallets](wallet.md)
 ---
 
 This documentation is intended to be technical, transparent, and protocol-focused.
