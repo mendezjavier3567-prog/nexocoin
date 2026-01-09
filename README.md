@@ -85,3 +85,7 @@ License information will be defined and published in a future update.
 
 This repository is provided for informational and technical purposes only.  
 Nothing in this repository constitutes financial, legal, or investment advice.
+
+This documentation describes the Nexocoin protocol as implemented.
+It may be updated only if the protocol itself changes.
+
