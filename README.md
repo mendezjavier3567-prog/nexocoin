@@ -89,3 +89,16 @@ Nothing in this repository constitutes financial, legal, or investment advice.
 This documentation describes the Nexocoin protocol as implemented.
 It may be updated only if the protocol itself changes.
 
+## Protocol Status
+
+Nexocoin protocol version v0.1.0 is frozen.
+
+This version defines:
+- Consensus rules
+- Monetary supply
+- Mining logic
+- Network behavior
+- Transaction validation
+
+No backward-incompatible changes will be introduced.
+All future development will target v0.2.0 and above.
