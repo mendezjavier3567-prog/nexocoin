@@ -1,73 +1,42 @@
-// Nexocoin Explorer v0.1.0
-// Reads public data from Nexocoin RPC
+// Nexocoin Explorer v0.1
+// Status-only explorer (protocol v0.1 frozen)
 
-const RPC_ENDPOINT = "http://localhost:8080"; 
-// luego se cambiará a dominio público
+const API_BASE = "http://127.0.0.1:8080";
 
-async function fetchJSON(path) {
-  const res = await fetch(`${RPC_ENDPOINT}${path}`);
-  if (!res.ok) {
-    throw new Error("RPC error");
-  }
-  return res.json();
-}
-
-// ----------------------------
-// Network status
-// ----------------------------
 async function loadStatus() {
   try {
-    const status = await fetchJSON("/status");
+    const res = await fetch(`${API_BASE}/status`);
+
+    if (!res.ok) {
+      throw new Error("API not reachable");
+    }
+
+    const data = await res.json();
+
+    document.getElementById("node-status").textContent = "ONLINE";
+    document.getElementById("node-status").classList.add("online");
 
     document.getElementById("block-height").textContent =
-      status.height ?? "—";
+      data.height.toLocaleString();
+
+    document.getElementById("total-mined").textContent =
+      data.totalMined.toLocaleString() + " NXC";
 
     document.getElementById("total-supply").textContent =
-      status.totalSupply ?? "—";
+      data.totalSupply.toLocaleString() + " NXC";
 
-    document.getElementById("peer-count").textContent =
-      status.peers ?? "—";
-  } catch (e) {
-    console.error("Status error", e);
+    document.getElementById("active-wallet").textContent =
+      data.activeWallet;
+
+  } catch (err) {
+    console.error(err);
+
+    document.getElementById("node-status").textContent = "OFFLINE";
+    document.getElementById("node-status").classList.remove("online");
+    document.getElementById("node-status").classList.add("offline");
   }
 }
 
-// ----------------------------
-// Latest blocks
-// ----------------------------
-async function loadBlocks() {
-  try {
-    const data = await fetchJSON("/blocks/latest");
-    const tbody = document.getElementById("blocks-table-body");
-    tbody.innerHTML = "";
-
-    data.forEach(block => {
-      const tr = document.createElement("tr");
-
-      tr.innerHTML = `
-        <td>${block.height}</td>
-        <td class="mono">${block.hash.slice(0, 16)}…</td>
-        <td>${new Date(block.timestamp * 1000).toLocaleString()}</td>
-        <td>${block.txCount}</td>
-      `;
-
-      tbody.appendChild(tr);
-    });
-  } catch (e) {
-    console.error("Blocks error", e);
-  }
-}
-
-// ----------------------------
-// Init
-// ----------------------------
-async function initExplorer() {
-  await loadStatus();
-  await loadBlocks();
-
-  // refresh every 10 seconds
-  setInterval(loadStatus, 10000);
-  setInterval(loadBlocks, 15000);
-}
-
-document.addEventListener("DOMContentLoaded", initExplorer);
+// Auto refresh every 5 seconds
+loadStatus();
+setInterval(loadStatus, 5000);
