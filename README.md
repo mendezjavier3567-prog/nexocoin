@@ -36,7 +36,7 @@ Core design goals:
 
 The complete technical documentation of the Nexocoin protocol is available in the `/docs` directory:
 
-👉 **[Protocol Documentation](./docs/README.md)**
+ **[Protocol Documentation](./docs/README.md)**
 
 It includes detailed specifications of:
 - Protocol architecture
