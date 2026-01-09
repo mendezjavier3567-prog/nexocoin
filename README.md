@@ -77,7 +77,11 @@ The protocol is designed to be understandable, auditable, and reproducible.
 
 ## License
 
-License information will be defined and published in a future update.
+## License
+
+This project is licensed under the Apache License 2.0.
+
+See the LICENSE file for full license text.
 
 ---
 
