@@ -1,5 +1,8 @@
 # Nexocoin
 
+Nexocoin is a native Layer-1 cryptocurrency with its own blockchain, consensus mechanism, and economic model.  
+It is not a token and does not rely on any external network.
+
 Nexocoin is a decentralized blockchain protocol designed to provide a secure, efficient, and transparent digital value system.
 
 The project focuses on protocol simplicity, deterministic behavior, and long-term sustainability, following proven principles established by first-generation blockchain networks while introducing a modern and modular architecture.
