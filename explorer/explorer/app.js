@@ -1,29 +1,73 @@
-// Fake blockchain data (placeholder)
-const explorerData = {
-  latestBlock: 128432,
-  blockTime: "00:01",
-  mempoolTx: 142,
-  difficulty: "1.25 MH",
-  blocks: [
-    { height: 128432, txs: 12, time: "1 min ago" },
-    { height: 128431, txs: 9, time: "2 min ago" },
-    { height: 128430, txs: 15, time: "3 min ago" },
-    { height: 128429, txs: 8, time: "4 min ago" },
-    { height: 128428, txs: 11, time: "5 min ago" }
-  ]
-};
+// Nexocoin Explorer v0.1.0
+// Reads public data from Nexocoin RPC
 
-// Populate stats
-document.getElementById("latest-block").innerText = explorerData.latestBlock;
-document.getElementById("block-time").innerText = explorerData.blockTime;
-document.getElementById("mempool").innerText = explorerData.mempoolTx;
-document.getElementById("difficulty").innerText = explorerData.difficulty;
+const RPC_ENDPOINT = "http://localhost:8080"; 
+// luego se cambiará a dominio público
 
-// Populate blocks list
-const blocksList = document.getElementById("blocks-list");
+async function fetchJSON(path) {
+  const res = await fetch(`${RPC_ENDPOINT}${path}`);
+  if (!res.ok) {
+    throw new Error("RPC error");
+  }
+  return res.json();
+}
 
-explorerData.blocks.forEach(block => {
-  const li = document.createElement("li");
-  li.innerText = `Block #${block.height} — ${block.txs} txs — ${block.time}`;
-  blocksList.appendChild(li);
-});
+// ----------------------------
+// Network status
+// ----------------------------
+async function loadStatus() {
+  try {
+    const status = await fetchJSON("/status");
+
+    document.getElementById("block-height").textContent =
+      status.height ?? "—";
+
+    document.getElementById("total-supply").textContent =
+      status.totalSupply ?? "—";
+
+    document.getElementById("peer-count").textContent =
+      status.peers ?? "—";
+  } catch (e) {
+    console.error("Status error", e);
+  }
+}
+
+// ----------------------------
+// Latest blocks
+// ----------------------------
+async function loadBlocks() {
+  try {
+    const data = await fetchJSON("/blocks/latest");
+    const tbody = document.getElementById("blocks-table-body");
+    tbody.innerHTML = "";
+
+    data.forEach(block => {
+      const tr = document.createElement("tr");
+
+      tr.innerHTML = `
+        <td>${block.height}</td>
+        <td class="mono">${block.hash.slice(0, 16)}…</td>
+        <td>${new Date(block.timestamp * 1000).toLocaleString()}</td>
+        <td>${block.txCount}</td>
+      `;
+
+      tbody.appendChild(tr);
+    });
+  } catch (e) {
+    console.error("Blocks error", e);
+  }
+}
+
+// ----------------------------
+// Init
+// ----------------------------
+async function initExplorer() {
+  await loadStatus();
+  await loadBlocks();
+
+  // refresh every 10 seconds
+  setInterval(loadStatus, 10000);
+  setInterval(loadBlocks, 15000);
+}
+
+document.addEventListener("DOMContentLoaded", initExplorer);
