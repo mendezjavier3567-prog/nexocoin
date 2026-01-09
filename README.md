@@ -8,6 +8,15 @@ Nexocoin is a decentralized blockchain protocol designed to provide a secure, ef
 The project focuses on protocol simplicity, deterministic behavior, and long-term sustainability, following proven principles established by first-generation blockchain networks while introducing a modern and modular architecture.
 
 ---
+## Software Status
+
+Nexocoin is currently in a specification and early development phase.
+
+This repository defines the protocol rules, architecture, and economic model.
+It does not yet provide a production-ready node implementation or a public mainnet.
+
+Future releases will introduce reference implementations, testnet deployments,
+and network tooling.
 
 ## Overview
 
