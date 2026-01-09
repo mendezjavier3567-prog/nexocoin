@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Nexocoin Explorer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <header class="top">
-    <h1>Nexocoin</h1>
-    <div class="subtitle">Blockchain Explorer</div>
+  <!-- Explorer styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>Nexocoin Explorer</h1>
+      <span class="subtitle">Public blockchain explorer</span>
+    </div>
   </header>
 
-  <section class="stats">
-    <div class="stat">
-      <div class="label">Latest Block</div>
-      <div class="value">1,234,567</div>
-    </div>
-    <div class="stat">
-      <div class="label">Time Since Last Block</div>
-      <div class="value">00:02:14</div>
-    </div>
-    <div class="stat">
-      <div class="label">Mempool TX</div>
-      <div class="value">3,421</div>
-    </div>
-  </section>
+  <main class="container">
 
-  <section class="search">
-    <input type="text" placeholder="Search by block, transaction or address">
-  </section>
+    <!-- Network status -->
+    <section class="card">
+      <h2>Network Status</h2>
+      <div id="network-status">
+        <p>Chain height: <strong id="block-height">loading...</strong></p>
+        <p>Total supply: <strong id="total-supply">loading...</strong></p>
+        <p>Peers connected: <strong id="peer-count">loading...</strong></p>
+      </div>
+    </section>
 
-  <section class="blocks">
-    <h2>Latest Blocks</h2>
-    <ul>
-      <li>Block #1234567</li>
-      <li>Block #1234566</li>
-      <li>Block #1234565</li>
-      <li>Block #1234564</li>
-    </ul>
-  </section>
+    <!-- Latest blocks -->
+    <section class="card">
+      <h2>Latest Blocks</h2>
+      <table class="blocks-table">
+        <thead>
+          <tr>
+            <th>Height</th>
+            <th>Hash</th>
+            <th>Timestamp</th>
+            <th>Tx count</th>
+          </tr>
+        </thead>
+        <tbody id="blocks-table-body">
+          <!-- Blocks inserted by JS -->
+        </tbody>
+      </table>
+    </section>
 
+  </main>
+
+  <footer class="footer">
+    <p>Nexocoin Protocol · Explorer v0.1.0</p>
+  </footer>
+
+  <!-- Explorer logic -->
+  <script src="app.js"></script>
 </body>
 </html>
