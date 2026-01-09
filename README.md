@@ -8,6 +8,31 @@ Nexocoin is a decentralized blockchain protocol designed to provide a secure, ef
 The project focuses on protocol simplicity, deterministic behavior, and long-term sustainability, following proven principles established by first-generation blockchain networks while introducing a modern and modular architecture.
 
 ---
+
+## Smart Contracts Status
+
+Nexocoin includes a native smart contract architecture composed of:
+
+- NEXO VM (deterministic virtual machine)
+- NEXO Script (native execution language)
+- Integrated gas model denominated in NXC
+
+The smart contract system has been fully designed and specified at protocol level.
+
+At the current stage:
+- Smart contracts are **defined and frozen at design level**
+- The execution environment exists internally
+- Gas rules and limits are established
+
+Smart contract execution is **not yet enabled on mainnet**.
+
+Activation is scheduled for a future protocol upgrade (v0.2.0),
+after additional auditing, tooling, and ecosystem readiness.
+
+This staged activation ensures long-term stability and security of the Nexocoin network.
+
+---
+
 ## Software Status
 
 Nexocoin is currently in a specification and early development phase.
@@ -17,6 +42,8 @@ It does not yet provide a production-ready node implementation or a public mainn
 
 Future releases will introduce reference implementations, testnet deployments,
 and network tooling.
+
+---
 
 ## Overview
 
