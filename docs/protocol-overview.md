@@ -1,6 +1,9 @@
 # Protocol Overview
 # Protocol Overview
 
+Nexocoin is a native Layer-1 cryptocurrency with its own blockchain, consensus mechanism, and economic model.  
+It is not a token and does not rely on any external network.
+
 The Nexocoin protocol defines a deterministic blockchain system composed of a global state, a block-based ledger, and a peer-to-peer network responsible for state replication and consensus.
 
 At its core, Nexocoin is designed around a **single authoritative state** that evolves through the sequential application of validated blocks. Each block represents a deterministic transformation of the previous state.
