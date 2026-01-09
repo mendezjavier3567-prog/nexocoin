@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>Nexocoin Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Nexocoin Block Explorer</h1>
-  <p>Explorer online</p>
+
+  <header class="top">
+    <h1>Nexocoin</h1>
+    <div class="subtitle">Blockchain Explorer</div>
+  </header>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="label">Latest Block</div>
+      <div class="value">1,234,567</div>
+    </div>
+    <div class="stat">
+      <div class="label">Time Since Last Block</div>
+      <div class="value">00:02:14</div>
+    </div>
+    <div class="stat">
+      <div class="label">Mempool TX</div>
+      <div class="value">3,421</div>
+    </div>
+  </section>
+
+  <section class="search">
+    <input type="text" placeholder="Search by block, transaction or address">
+  </section>
+
+  <section class="blocks">
+    <h2>Latest Blocks</h2>
+    <ul>
+      <li>Block #1234567</li>
+      <li>Block #1234566</li>
+      <li>Block #1234565</li>
+      <li>Block #1234564</li>
+    </ul>
+  </section>
+
 </body>
 </html>
