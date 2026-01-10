@@ -1,8 +1,6 @@
 # Transactions
-# Transactions
 
 This document describes the transaction model of the Nexocoin protocol.
-
 Transactions are the mechanism by which value is transferred and state changes are recorded on the blockchain.
 
 ---
@@ -11,12 +9,12 @@ Transactions are the mechanism by which value is transferred and state changes a
 
 Transactions in Nexocoin allow participants to:
 
-- Transfer NXC between addresses
-- Update the global state
-- Interact with protocol-level features
-- Record value movements in an immutable ledger
+- Transfer NXC between addresses  
+- Update the global protocol state  
+- Interact with protocol-level features  
+- Record value movements in an immutable ledger  
 
-All transactions are processed and validated by the network.
+All transactions are processed, validated, and enforced by consensus rules.
 
 ---
 
@@ -24,11 +22,11 @@ All transactions are processed and validated by the network.
 
 A Nexocoin transaction consists of the following components:
 
-- Sender address
-- Recipient address
-- Amount
-- Fee (gas)
-- Metadata (optional)
+- Sender address  
+- Recipient address  
+- Amount  
+- Fee (gas)  
+- Optional metadata  
 
 Each transaction is uniquely identifiable and immutable once confirmed.
 
@@ -38,13 +36,13 @@ Each transaction is uniquely identifiable and immutable once confirmed.
 
 Before a transaction is accepted into a block, it must satisfy all validation rules:
 
-- The sender address must exist
-- The sender must have sufficient balance
-- The transaction amount must be valid
-- The required fee must be provided
-- The transaction must respect protocol limits
+- The sender address must be valid  
+- The sender must have sufficient balance  
+- The transaction amount must be positive and within protocol limits  
+- The required fee must be provided  
+- The transaction must respect protocol-defined constraints  
 
-Invalid transactions are rejected by all nodes.
+Transactions that fail any validation rule are rejected by all nodes.
 
 ---
 
@@ -52,12 +50,12 @@ Invalid transactions are rejected by all nodes.
 
 Transactions modify the global state in a deterministic manner:
 
-- The sender balance is reduced
-- The recipient balance is increased
-- Fees are applied according to protocol rules
-- The updated state is committed atomically
+- The sender balance is reduced  
+- The recipient balance is increased  
+- Fees are applied according to protocol rules  
+- The resulting state update is committed atomically  
 
-All nodes compute the same result independently.
+All nodes independently compute the same state transition.
 
 ---
 
@@ -65,11 +63,11 @@ All nodes compute the same result independently.
 
 Nexocoin transactions are:
 
-- **Atomic**: fully applied or fully rejected
-- **Deterministic**: identical inputs produce identical outputs
-- **Final**: confirmed transactions cannot be reverted
+- Atomic: fully applied or fully rejected  
+- Deterministic: identical inputs always produce identical outputs  
+- Final: confirmed transactions cannot be reverted  
 
-This guarantees consistency across the network.
+These properties guarantee global consistency across the network.
 
 ---
 
@@ -77,11 +75,11 @@ This guarantees consistency across the network.
 
 Each transaction requires a protocol-defined fee:
 
-- Prevents network abuse
-- Prioritizes transaction processing
-- Compensates block production costs
+- Prevents network abuse  
+- Provides execution cost accounting  
+- Ensures sustainable block production  
 
-Fee rules are enforced by consensus and cannot be bypassed.
+Fee rules are enforced by consensus and cannot be bypassed or modified without a protocol upgrade.
 
 ---
 
@@ -89,11 +87,11 @@ Fee rules are enforced by consensus and cannot be bypassed.
 
 Transactions included in a block are executed sequentially:
 
-- Order is defined at block creation
-- Each transaction sees the updated state from previous ones
-- Conflicts are resolved deterministically
+- Ordering is explicitly defined at block creation  
+- Each transaction observes the updated state from previous ones  
+- Conflicts are resolved deterministically  
 
-This ensures predictable execution results.
+This guarantees predictable execution results for all nodes.
 
 ---
 
@@ -101,11 +99,11 @@ This ensures predictable execution results.
 
 A transaction is considered confirmed when:
 
-- It is included in a valid block
-- The block is accepted by the network
-- The resulting state is finalized
+- It is included in a valid block  
+- The block is accepted into the canonical chain  
+- The resulting state transition is finalized  
 
-Confirmation provides strong guarantees of permanence.
+Confirmation provides strong guarantees of permanence and immutability.
 
 ---
 
@@ -113,19 +111,19 @@ Confirmation provides strong guarantees of permanence.
 
 All transactions are:
 
-- Publicly visible on-chain
-- Fully auditable
-- Cryptographically verifiable
+- Publicly visible on-chain  
+- Fully auditable by any participant  
+- Cryptographically verifiable  
 
-Anyone can independently verify transaction history.
+Anyone can independently verify transaction validity and history.
 
 ---
 
 ## Summary
 
-- Transactions move value and update state
-- Validation is strict and deterministic
-- Fees protect network integrity
-- All transactions are immutable and auditable
+- Transactions move value and update protocol state  
+- Validation rules are strict and deterministic  
+- Fees protect network integrity  
+- All confirmed transactions are immutable and auditable  
 
 Transactions are a fundamental building block of the Nexocoin protocol.
