@@ -1,5 +1,5 @@
 # Economic Model
-# Economics
+# Economics 
 
 This document describes the economic model of the Nexocoin protocol, including supply rules, issuance mechanics, incentives, and long-term sustainability.
 
